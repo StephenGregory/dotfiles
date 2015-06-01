@@ -1,0 +1,28 @@
+[alias]
+        lol = log --all --decorate --graph -oneline
+        ci = commit
+        civ = commit --verbose
+        a = add
+[credential]
+[push]
+        default = matching
+[color]
+	ui = true
+[color "branch"]
+        current = green reverse
+        local = green
+        remote = magenta
+[color "diff"]
+        meta = yellow bold
+        frag = cyan # line info
+        old = red # deletions
+        new = green # additions
+[color "status"]
+        added = green
+        changed = yellow bold
+        untracked = cyan
+[diff]
+# Detect copies as well as renames
+        renames = copies
+[core]
+	editor = vim
