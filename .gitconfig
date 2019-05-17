@@ -1,28 +1,41 @@
 [alias]
-        lol = log --all --decorate --graph -oneline
+        co = checkout
+        cob = checkout -b
+        st = status
+        a = add -p
         ci = commit
-        civ = commit --verbose
-        a = add
-[credential]
+        ria = rebase --interactive --autosquash
+        ciane = commit --amend --no-edit
+        upthere = push -f
+        cif = commit --fixup
+        rc = rebase --continue
+        cia = commit --amend
+        lg = log --graph --pretty=format:'%C(bold yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)[%an]%Creset' --abbrev-commit --date=short
+        mc = merge --continue
+        diff = diff --color-moved
 [push]
         default = matching
 [color]
 	ui = true
-[color "branch"]
-        current = green reverse
-        local = green
-        remote = magenta
+[color "diff-highlight"]
+        oldNormal = red bold
+        oldHighlight = red bold 52
+        newNormal = green bold
+        newHighlight = green bold 22
 [color "diff"]
-        meta = yellow bold
-        frag = cyan # line info
-        old = red # deletions
-        new = green # additions
-[color "status"]
-        added = green
-        changed = yellow bold
-        untracked = cyan
+        meta = yellow
+        frag = magenta bold
+        commit = yellow bold
+        old = red bold
+        new = green bold
+        whitespace = red reverse
+[rebase]
+        autostash = true
+        abbreviateCommands = true
 [diff]
 # Detect copies as well as renames
         renames = copies
 [core]
 	editor = vim
+[branch]
+        sort = -committerdate
